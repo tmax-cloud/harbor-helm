@@ -16,7 +16,7 @@ expose:
     # The tls certificate can be generated manually or by cert manager
     # 3) none: configure no tls certificate for the ingress. If the default
     # tls certificate is configured in the ingress controller, choose this option
-    certSource: auto
+    certSource: none
     auto:
       # The common name used to generate the certificate, it's necessary
       # when the type isn't "ingress"
@@ -33,8 +33,8 @@ expose:
       notarySecretName: ""
   ingress:
     hosts:
-      core: core.harbor.domain
-      notary: notary.harbor.domain
+      core: hyperregistry.domain
+      notary: hyperregistry-notary.domain
     # set to the type of ingress controller if it has specific requirements.
     # leave as `default` for most ingress controllers.
     # set to `gce` if using the GCE ingress controller
@@ -44,7 +44,9 @@ expose:
     controller: default
     ## Allow .Capabilities.KubeVersion.Version to be overridden while creating ingress
     kubeVersionOverride: ""
-    className: ""
+    className: "tmax-cloud"
+    labels:
+      ingress.tmaxcloud.org/name: hyperregistry
     annotations:
       # note different ingress controllers may require a different ssl-redirect annotation
       # for Envoy, use ingress.kubernetes.io/force-ssl-redirect: "true" and remove the nginx lines below
@@ -52,6 +54,7 @@ expose:
       ingress.kubernetes.io/proxy-body-size: "0"
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
       nginx.ingress.kubernetes.io/proxy-body-size: "0"
+      traefik.ingress.kubernetes.io/router.entrypoints: websecure
     notary:
       # notary ingress-specific annotations
       annotations: {}
@@ -124,7 +127,7 @@ expose:
 # the IP address of k8s node
 #
 # If Harbor is deployed behind the proxy, set it as the URL of proxy
-externalURL: https://core.harbor.domain
+externalURL: https://hyperregistry.domain
 
 # The internal TLS used for harbor components secure communicating. In order to enable https
 # in each components tls cert files need to provided in advance.
@@ -373,7 +376,7 @@ updateStrategy:
 logLevel: info
 
 # The initial password of Harbor admin. Change it from portal after launching Harbor
-harborAdminPassword: "Harbor12345"
+harborAdminPassword: "admin"
 
 # The name of the secret which contains key named "ca.crt". Setting this enables the
 # download link on portal to download the CA certificate when the certificate isn't
