@@ -36,6 +36,8 @@ spec:
 {{- end }}
 {{- if .Values.trivy.serviceAccountName }}
       serviceAccountName: {{ .Values.trivy.serviceAccountName }}
+{{- else }}
+      serviceAccountName: {{ include "harbor.rbac.serviceAccount" . }}
 {{- end }}
       securityContext:
         runAsUser: 10000

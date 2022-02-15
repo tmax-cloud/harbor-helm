@@ -40,6 +40,8 @@ spec:
         fsGroup: 10000
 {{- if .Values.chartmuseum.serviceAccountName }}
       serviceAccountName: {{ .Values.chartmuseum.serviceAccountName }}
+{{- else }}
+      serviceAccountName: {{ include "harbor.rbac.serviceAccount" . }}
 {{- end -}}
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:

@@ -35,6 +35,8 @@ spec:
       {{- end }}
 {{- if .Values.portal.serviceAccountName }}
       serviceAccountName: {{ .Values.portal.serviceAccountName }}
+{{- else }}
+      serviceAccountName: {{ include "harbor.rbac.serviceAccount" . }}
 {{- end }}
       automountServiceAccountToken: {{ .Values.portal.automountServiceAccountToken | default false }}
       containers:

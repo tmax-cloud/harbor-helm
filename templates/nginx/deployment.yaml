@@ -32,6 +32,8 @@ spec:
     spec:
 {{- if .Values.nginx.serviceAccountName }}
       serviceAccountName: {{ .Values.nginx.serviceAccountName }}
+{{- else }}
+      serviceAccountName: {{ include "harbor.rbac.serviceAccount" . }}
 {{- end }}
       securityContext:
         runAsUser: 10000

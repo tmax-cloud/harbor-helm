@@ -34,6 +34,8 @@ spec:
         fsGroup: 10000
 {{- if .Values.core.serviceAccountName }}
       serviceAccountName: {{ .Values.core.serviceAccountName }}
+{{- else }}
+      serviceAccountName: {{ include "harbor.rbac.serviceAccount" . }}
 {{- end -}}
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
