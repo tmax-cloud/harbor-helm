@@ -1,3 +1,3 @@
-# Harbor Chart Repository
+# SuperRegistry Chart Repository
 
-The repository holds the files needed for a Harbor chart repository.  
+The repository holds the files needed for a SuperRegistry chart repository.  
