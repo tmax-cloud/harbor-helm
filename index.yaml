@@ -3,10 +3,10 @@ entries:
   superregistry:
   - apiVersion: v1
     appVersion: dev
-    created: "2022-02-15T16:06:09.3186985+09:00"
+    created: "2022-02-16T09:29:23.1337295+09:00"
     description: An open source trusted cloud native registry that stores, signs,
       and scans content forked from Harbor
-    digest: 49ff7ccb153b67ae7be0ce3c535b1039c632dc3489e24c26b46dec99d443c882
+    digest: 690489c4855f69a16ae75b75853bfe4cb6ff92ada353550600c7506b9d701fb6
     home: https://goharbor.io
     icon: https://raw.githubusercontent.com/tmax-cloud/superregistry/5.0/icons/logo.png
     keywords:
@@ -23,4 +23,4 @@ entries:
     urls:
     - superregistry-2.4.1.tgz
     version: 2.4.1
-generated: "2022-02-15T16:06:09.3129497+09:00"
+generated: "2022-02-16T09:29:23.1221698+09:00"
