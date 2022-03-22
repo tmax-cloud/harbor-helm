@@ -1,14 +1,14 @@
 apiVersion: v1
 entries:
-  superregistry:
+  hyperregistry:
   - apiVersion: v1
     appVersion: dev
-    created: "2022-02-16T09:29:23.1337295+09:00"
+    created: "2022-03-22T11:09:44.227096+09:00"
     description: An open source trusted cloud native registry that stores, signs,
       and scans content forked from Harbor
-    digest: 690489c4855f69a16ae75b75853bfe4cb6ff92ada353550600c7506b9d701fb6
+    digest: 1611d238892c772a2647ffc70a4e38b3272fb1b1274526bda94770f254cbb8ec
     home: https://goharbor.io
-    icon: https://raw.githubusercontent.com/tmax-cloud/superregistry/5.0/icons/logo.png
+    icon: https://raw.githubusercontent.com/tmax-cloud/hyperregistry/5.0/icons/logo.png
     keywords:
     - docker
     - registry
@@ -16,11 +16,11 @@ entries:
     maintainers:
     - email: taejune_ahn@tmax.co.kr
       name: taejune ahn
-    name: superregistry
+    name: hyperregistry
     sources:
-    - https://github.com/tmax-cloud/superregistry/tree/5.0
+    - https://github.com/tmax-cloud/hyperregistry/tree/5.0
     - https://github.com/tmax-cloud/harbor-helm/tree/5.0
     urls:
-    - superregistry-2.4.1.tgz
+    - hyperregistry-2.4.1.tgz
     version: 2.4.1
-generated: "2022-02-16T09:29:23.1221698+09:00"
+generated: "2022-03-22T11:09:44.2204376+09:00"
