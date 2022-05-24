@@ -13,6 +13,8 @@ sources:
 - https://github.com/tmax-cloud/hyperregistry/tree/5.0
 - https://github.com/tmax-cloud/harbor-helm/tree/5.0
 maintainers:
+- email: namgon_kim@tmax.co.kr
+  name: namgon kim
 - email: taejune_ahn@tmax.co.kr
   name: taejune ahn
 engine: gotpl

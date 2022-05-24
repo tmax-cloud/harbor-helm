@@ -1,0 +1,7 @@
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: hypercloud-infra-priority
+value: 900000000
+globalDefault: false
+description: ""

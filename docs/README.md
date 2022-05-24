@@ -1,14 +1,19 @@
 # HyperRegistry-Chart
-This is helm repository for HyperReigstry
+The HyperRegistry is an image registry based on an open source [harbor](https://github.com/goharbor/harbor).
+This is helm repository for HyperReigstry.
+
+## 개요
+* 목적: 이미지를 저장하고 관리(서명, 스캔)하기 위함
+* 역할: Hypercloud 내 모든 이미지를 저장하고 관리하는 용도
 
 ## Installation
-- [폐쇄망 환경 준비](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/install.md#폐쇄망에서-설치를-위한-환경-준비하기)
-- [설치](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/install.md#설치)
-- [HyperAuth OIDC 연동](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/oidc.md)
-- [P2P Preheat 연동](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/kraken.md)
-- [외부 Registry Replication 연동](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/replication.md)
-- [외부 HA DB 구성](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/postgres.md)
-- [외부 HA REDIS 구성](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/redis.md)
+- [폐쇄망 환경 준비](https://github.com/tmax-cloud/harbor-helm/blob/5.0/docs/install.md#폐쇄망에서-설치를-위한-환경-준비하기)
+- [설치](https://github.com/tmax-cloud/harbor-helm/blob/5.0/docs/install.md#설치)
+- [HyperAuth OIDC 연동](https://github.com/tmax-cloud/harbor-helm/blob/5.0/docs/oidc.md)
+- [P2P Preheat 연동](https://github.com/tmax-cloud/harbor-helm/blob/5.0/docs/kraken.md)
+- [외부 Registry Replication 연동](https://github.com/tmax-cloud/harbor-helm/blob/5.0/docs/replication.md)
+- [외부 HA DB 구성](https://github.com/tmax-cloud/harbor-helm/blob/5.0/docs/postgres.md)
+- [외부 HA REDIS 구성](https://github.com/tmax-cloud/harbor-helm/blob/5.0/docs/redis.md)
 - [이미지 서명 가이드 (Download pptx)](https://tmaxcloud-ck1-2.s3.ap-northeast-2.amazonaws.com/%EC%9D%B4%EB%AF%B8%EC%A7%80+%EC%84%9C%EB%AA%85.pptx)
 
 ## Usage

@@ -15,12 +15,18 @@
 1. (외부망 환경에서) HyperRegistry 이미지 및 바이너리 다운로드
 
    1. git repo 클론
+      * v.2.4.0 이하
       ```bash
       git clone -b 5.0 https://github.com/tmax-cloud/HyperRegistry-Chart
+      ```
+      * v.2.4.1 이상
+      ```bash
+      git clone -b 5.0 https://github.com/tmax-cloud/harbor-helm
       ```
    2. HyperRegistry 이미지 다운로드
       ```bash
       cd HyperRegistry-Chart
+      # cd harbor-helm
       chmod +x download.sh
       ./download.sh <download_dir> # ./download.sh ./downloads
       ```
@@ -125,18 +131,18 @@
    - 레지스트리 스토리지 용량 설정
      - **persistence.persistentVolumeClaim.registry.size**: `500Gi` (as big as your needs)
      
-   - (Optional) [Database HA](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/postgres.md) 구성 시
+   - (Optional) [Database HA](https://github.com/tmax-cloud/harbor-helm/blob/5.0/docs/postgres.md) 구성 시
      - **database.type** : `external`
      - **database.external**: 
 
-   - (Optional) [Redis HA](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/redis.md) 구성 시
+   - (Optional) [Redis HA](https://github.com/tmax-cloud/harbor-helm/blob/5.0/docs/redis.md) 구성 시
      - **redis.type** : `external`
      - **redis.external**: 
        - addr : pod의 주소:26379 (ex. 10.244.166.186:26379,10.244.33.190:26379,10.244.135.46:26379)
        - sentinelMasterSet: "mymaster"
        - password: kubectl get secret --namespace default redis-ha -o jsonpath="{.data.redis-password}" | base64 --decode 의 값
 
-   - (Optional) [Kraken](https://github.com/tmax-cloud/HyperRegistry-Chart/blob/5.0/docs/kraken.md) 구성 시
+   - (Optional) [Kraken](https://github.com/tmax-cloud/harbor-helm/blob/5.0/docs/kraken.md) 구성 시
      - **registry.notifications.url**: `http://proxy.kraken.172.22.11.2.nip.io/registry/notification`
 
 3. 스토리지클래스 설정
