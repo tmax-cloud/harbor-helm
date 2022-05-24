@@ -1,5 +1,10 @@
 # HyperRegistry-Chart
-This is helm repository for HyperReigstry
+The HyperRegistry is an image registry based on an open source [harbor](https://github.com/goharbor/harbor).
+This is helm repository for HyperReigstry.
+
+## 개요
+* 목적: 이미지를 저장하고 관리(서명, 스캔)하기 위함
+* 역할: Hypercloud 내 모든 이미지를 저장하고 관리하는 용도
 
 ## Installation
 - [폐쇄망 환경 준비](https://github.com/tmax-cloud/harbor-helm/blob/5.0/docs/install.md#폐쇄망에서-설치를-위한-환경-준비하기)

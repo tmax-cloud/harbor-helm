@@ -1,0 +1,89 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kraken-proxy
+spec:
+  replicas: {{ .Values.proxy.replicas }}
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: kraken
+      app.kubernetes.io/component: proxy
+      app.kubernetes.io/instance: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: kraken
+        app.kubernetes.io/component: proxy
+        app.kubernetes.io/instance: {{ .Release.Name }}
+      {{ with .Values.proxy.annotations -}}
+      annotations:
+{{ tpl . $ | indent 8 }}
+      {{- end }}
+    spec:
+      {{ with .Values.proxy.initContainers -}}
+      initContainers:
+{{ toYaml . | indent 6 }}{{ end }}
+      containers:
+      - name: main
+        image: {{ .Values.kraken.repository }}/kraken-proxy:{{ .Values.kraken.tag }}
+        imagePullPolicy: {{ .Values.kraken.imagePullPolicy }}
+        command:
+        - /usr/bin/kraken-proxy
+        - --config={{ .Values.proxy.config }}
+        - --port=80
+        - --server-port=8080
+        volumeMounts:
+        - name: config
+          mountPath: /etc/config
+{{ with .Values.proxy.extraVolumeMounts }}{{ toYaml . | indent 8 }}{{ end }}
+      volumes:
+      - name: config
+        configMap:
+          name: kraken
+{{ with .Values.proxy.extraVolumes }}{{ toYaml . | indent 6 }}{{ end }}
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: kraken-proxy
+spec:
+  selector:
+    app.kubernetes.io/name: kraken
+    app.kubernetes.io/component: proxy
+    app.kubernetes.io/instance: {{ .Release.Name }}
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+
+{{ if .Values.ingress.enabled }}  
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kraken-proxy-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx-shd"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+spec:
+  rules:
+  - host: "proxy.{{ .Values.ingress.ingressHostPrefix }}"
+    http:
+      paths:
+      - pathType: Prefix
+        path: /health
+        backend:
+          service: 
+            name: kraken-proxy
+            port: 
+              number: 8080
+      - pathType: Prefix
+        path: /registry/notifications
+        backend:
+          service: 
+            name: kraken-proxy
+            port: 
+              number: 8080
+{{ end }} 
