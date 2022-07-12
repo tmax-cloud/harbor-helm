@@ -1,4 +1,4 @@
-# 페쇄망 이미지 스캐닝 가이드
+# 폐쇄망 이미지 스캐닝 가이드
 
 1. hyperregistry helm chart의 values.yaml에 다음 아래의 value가 없을 경우 추가, 있을 경우 false를 true로 변경
   - kubespray로 설치한 경우 /etc/kubernetes/addons/hyperregistry/hr-nginx-values.yml 이용
