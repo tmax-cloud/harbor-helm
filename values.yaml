@@ -1,3 +1,6 @@
+global:
+  time_zone: "Asia/Seoul"
+
 expose:
   # Set how to expose the service. Set the type as "ingress", "clusterIP", "nodePort" or "loadBalancer"
   # and fill the information in the corresponding section
@@ -54,7 +57,7 @@ expose:
       ingress.kubernetes.io/proxy-body-size: "0"
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
       nginx.ingress.kubernetes.io/proxy-body-size: "0"
-      # traefik.ingress.kubernetes.io/router.entrypoints: websecure
+      traefik.ingress.kubernetes.io/router.entrypoints: websecure
     notary:
       # notary ingress-specific annotations
       annotations: {}
@@ -372,8 +375,15 @@ imagePullSecrets:
 updateStrategy:
   type: RollingUpdate
 
-# debug, info, warning, error or fatal
+# set loglevel
+# core, chartmuseum, jobservice, notary-server, notary-signer, registry, trivy (debug, info, warning, error or fatal)
 logLevel: info
+# redis (debug, verbose, notice, warning)
+redisLogLevel: verbose
+# database[postgres] (DEBUG5, DEBUG4, DEBUG3, DEBUG2, DEBUG1, INFO, NOTICE, WARNING, ERROR, LOG, FATAL, PANIC)
+databaseLogLevel: INFO
+# portal (debug, info, notice, warn, error, crit, alert, emerg)
+portalLogLevel: info
 
 # The initial password of Harbor admin. Change it from portal after launching Harbor
 harborAdminPassword: "admin"
