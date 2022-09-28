@@ -3,9 +3,9 @@ entries:
   hyperregistry:
   - apiVersion: v1
     appVersion: 2.4.1
-    created: "2022-08-25T17:54:46.065270294+09:00"
+    created: "2022-09-28T14:43:56.949944684+09:00"
     description: An open source trusted cloud native registry that stores, signs, and scans content forked from Harbor
-    digest: 2f84a9d98ff493ecd016332aa4c0f1e04248120dbddf64eb63739ef9e7a55d55
+    digest: 63243b7cd852d72f0bffe8c62ef7fb105b2deebacc7126fa6ecb09f5c3e198e0
     home: https://goharbor.io
     icon: https://raw.githubusercontent.com/tmax-cloud/hyperregistry/5.0/icons/logo.png
     keywords:
@@ -24,4 +24,4 @@ entries:
     urls:
     - hyperregistry-2.4.1.tgz
     version: 2.4.1
-generated: "2022-08-25T17:54:46.055457631+09:00"
+generated: "2022-09-28T14:43:56.939433575+09:00"
