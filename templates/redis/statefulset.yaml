@@ -104,7 +104,7 @@ spec:
   - metadata:
       name: data
       labels:
-{{ include "harbor.labels" . | indent 8 }}
+{{ include "harbor.stsLabels" . | indent 8 }}
     spec:
       accessModes: [{{ $redis.accessMode | quote }}]
       {{- if $redis.storageClass }}
