@@ -164,7 +164,7 @@ spec:
   - metadata:
       name: "database-data"
       labels:
-{{ include "harbor.stsLabels" . | indent 8 }}
+{{ include "harbor.labels" . | indent 8 }}
     spec:
       accessModes: [{{ $database.accessMode | quote }}]
       {{- if $database.storageClass }}
