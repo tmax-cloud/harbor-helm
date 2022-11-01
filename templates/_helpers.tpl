@@ -34,6 +34,13 @@ app: "{{ template "harbor.name" . }}"
 app.kubernetes.io/instance: {{ .Release.Name }} 
 {{- end -}}
 
+{{- define "harbor.stsLabels" -}}
+heritage: {{ .Release.Service }}
+release: {{ .Release.Name }}
+chart: {{ .Chart.Name }}
+app: "{{ template "harbor.name" . }}"
+{{- end -}}
+
 {{/* matchLabels */}}
 {{- define "harbor.matchLabels" -}}
 release: {{ .Release.Name }}
