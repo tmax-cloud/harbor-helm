@@ -434,10 +434,10 @@ nginx:
   automountServiceAccountToken: false
   replicas: 1
   revisionHistoryLimit: 10
-  # resources:
-  #  requests:
-  #    memory: 256Mi
-  #    cpu: 100m
+  resources:
+    requests:
+      memory: 256Mi
+      cpu: 100m
   nodeSelector: {}
   tolerations: []
   affinity: {}
@@ -456,10 +456,13 @@ portal:
   automountServiceAccountToken: false
   replicas: 1
   revisionHistoryLimit: 10
-  # resources:
-  #  requests:
-  #    memory: 256Mi
-  #    cpu: 100m
+  resources:
+    requests:
+      memory: 256Mi
+      cpu: 200m
+    limits:
+      cpu: 1
+      memory: 1Gi
   nodeSelector: {}
   tolerations: []
   affinity: {}
@@ -482,10 +485,13 @@ core:
   startupProbe:
     enabled: true
     initialDelaySeconds: 10
-  # resources:
-  #  requests:
-  #    memory: 256Mi
-  #    cpu: 100m
+  resources:
+    requests:
+      memory: 256Mi
+      cpu: 200m
+    limits:
+      cpu: 1
+      memory: 1Gi
   nodeSelector: {}
   tolerations: []
   affinity: {}
@@ -539,11 +545,13 @@ jobservice:
     # - stdout
   # The jobLogger sweeper duration (ignored if `jobLogger` is `stdout`)
   loggerSweeperDuration: 14 #days
-
-  # resources:
-  #   requests:
-  #     memory: 256Mi
-  #     cpu: 100m
+  resources:
+    requests:
+      memory: 512Mi
+      cpu: 200m
+    limits:
+      cpu: 1
+      memory: 1Gi
   nodeSelector: {}
   tolerations: []
   affinity: {}
@@ -565,18 +573,24 @@ registry:
     image:
       repository: tmaxcloudck/registry-photon
       tag: 2.7.4
-    # resources:
-    #  requests:
-    #    memory: 256Mi
-    #    cpu: 100m
+    resources:
+      requests:
+        memory: 1Gi
+        cpu: 500m
+      limits:
+        cpu: 1
+        memory: 2Gi
   controller:
     image:
       repository: tmaxcloudck/harbor-registryctl
       tag: 2.7.4
-    # resources:
-    #  requests:
-    #    memory: 256Mi
-    #    cpu: 100m
+    resources:
+      requests:
+        memory: 1Gi
+        cpu: 500m
+      limits:
+        cpu: 1
+        memory: 2Gi
   replicas: 1
   revisionHistoryLimit: 10
   nodeSelector: {}
@@ -634,10 +648,13 @@ chartmuseum:
     tag: 2.7.4
   replicas: 1
   revisionHistoryLimit: 10
-  # resources:
-  #  requests:
-  #    memory: 256Mi
-  #    cpu: 100m
+  resources:
+    requests:
+      memory: 128Mi
+      cpu: 100m
+    limits:
+      cpu: 1
+      memory: 1Gi
   nodeSelector: {}
   tolerations: []
   affinity: {}
@@ -732,10 +749,13 @@ notary:
       repository: tmaxcloudck/notary-server-photon
       tag: 2.7.4
     replicas: 1
-    # resources:
-    #  requests:
-    #    memory: 256Mi
-    #    cpu: 100m
+    resources:
+      requests:
+        cpu: 100m
+        memory: 256Mi
+      limits:
+        cpu: 500m
+        memory: 512Mi
     nodeSelector: {}
     tolerations: []
     affinity: {}
@@ -754,10 +774,13 @@ notary:
       repository: tmaxcloudck/notary-signer-photon
       tag: 2.7.4
     replicas: 1
-    # resources:
-    #  requests:
-    #    memory: 256Mi
-    #    cpu: 100m
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128Mi
+      limits:
+        cpu: 500m
+        memory: 512Mi
     nodeSelector: {}
     tolerations: []
     affinity: {}
@@ -791,16 +814,19 @@ database:
     # More details see:
     # https://github.com/tmaxcloudck/harbor/issues/15034
     shmSizeLimit: 512Mi
-    # resources:
-    #  requests:
-    #    memory: 256Mi
-    #    cpu: 100m
     # The timeout used in livenessProbe; 1 to 5 seconds
     livenessProbe:
       timeoutSeconds: 1
     # The timeout used in readinessProbe; 1 to 5 seconds
     readinessProbe:
       timeoutSeconds: 1
+    resources:
+      requests:
+        cpu: 500m
+        memory: 512Mi
+      limits:
+        cpu: 1
+        memory: 1Gi
     nodeSelector: {}
     tolerations: []
     affinity: {}
@@ -808,15 +834,11 @@ database:
     priorityClassName:
     initContainer:
       migrator: {}
-      # resources:
-      #  requests:
-      #    memory: 128Mi
-      #    cpu: 100m
+      resources:
+       requests:
+         memory: 128Mi
+         cpu: 100m
       permissions: {}
-      # resources:
-      #  requests:
-      #    memory: 128Mi
-      #    cpu: 100m
   external:
     host: "192.168.0.1"
     port: "5432"
@@ -857,10 +879,13 @@ redis:
     image:
       repository: tmaxcloudck/redis-photon
       tag: 2.7.4
-    # resources:
-    #  requests:
-    #    memory: 256Mi
-    #    cpu: 100m
+    resources:
+      requests:
+        cpu: 500m
+        memory: 512Mi
+      limits:
+        cpu: 1
+        memory: 1Gi
     nodeSelector: {}
     tolerations: []
     affinity: {}
