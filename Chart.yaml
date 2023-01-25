@@ -11,7 +11,7 @@ home: https://goharbor.io
 icon: https://raw.githubusercontent.com/tmax-cloud/hyperregistry/5.0/icons/logo.png
 sources:
 - https://github.com/tmax-cloud/hyperregistry/tree/release-2.7.0
-- https://github.com/tmax-cloud/harbor-helm/tree/1.11.0
+- https://github.com/tmax-cloud/harbor-helm/tree/5.2
 maintainers:
 - email: namgon_kim@tmax.co.kr
   name: namgon kim
