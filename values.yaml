@@ -834,10 +834,10 @@ database:
     priorityClassName:
     initContainer:
       migrator: {}
-      resources:
-       requests:
-         memory: 128Mi
-         cpu: 100m
+      # resources:
+      #  requests:
+      #    memory: 128Mi
+      #    cpu: 100m
       permissions: {}
   external:
     host: "192.168.0.1"
