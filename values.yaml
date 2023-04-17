@@ -412,8 +412,8 @@ enableMigrateHelmHook: false
 # If service exposed via "ingress", the Nginx will not be used
 nginx:
   image:
-    repository: tmaxcloudck/nginx-photon
-    tag: 2.7.4
+    repository: goharbor/nginx-photon
+    tag: v2.8.0
   # set the service account to be used, default if left empty
   serviceAccountName: ""
   # mount the service account token
@@ -434,8 +434,8 @@ nginx:
 
 portal:
   image:
-    repository: tmaxcloudck/harbor-portal
-    tag: 2.7.4.fix
+    repository: goharbor/harbor-portal
+    tag: v2.8.0
   # set the service account to be used, default if left empty
   serviceAccountName: ""
   # mount the service account token
@@ -459,8 +459,8 @@ portal:
 
 core:
   image:
-    repository: tmaxcloudck/harbor-core
-    tag: 2.7.4
+    repository: goharbor/harbor-core
+    tag: v2.8.0
   # set the service account to be used, default if left empty
   serviceAccountName: ""
   # mount the service account token
@@ -515,8 +515,8 @@ core:
 
 jobservice:
   image:
-    repository: tmaxcloudck/harbor-jobservice
-    tag: 2.7.4
+    repository: goharbor/harbor-jobservice
+    tag: v2.8.0
   replicas: 1
   revisionHistoryLimit: 10
   # set the service account to be used, default if left empty
@@ -565,8 +565,8 @@ registry:
   automountServiceAccountToken: false
   registry:
     image:
-      repository: tmaxcloudck/registry-photon
-      tag: 2.7.4
+      repository: goharbor/registry-photon
+      tag: v2.8.0
     resources:
       requests:
         memory: 1Gi
@@ -576,8 +576,8 @@ registry:
         memory: 2Gi
   controller:
     image:
-      repository: tmaxcloudck/harbor-registryctl
-      tag: 2.7.4
+      repository: goharbor/harbor-registryctl
+      tag: v2.8.0
     resources:
       requests:
         memory: 1Gi
@@ -634,9 +634,9 @@ trivy:
   enabled: true
   image:
     # repository the repository for Trivy adapter image
-    repository: tmaxcloudck/trivy-adapter-photon
+    repository: goharbor/trivy-adapter-photon
     # tag the tag for Trivy adapter image
-    tag: 2.7.4
+    tag: v2.8.0
   # set the service account to be used, default if left empty
   serviceAccountName: ""
   # mount the service account token
@@ -710,8 +710,8 @@ notary:
     # mount the service account token
     automountServiceAccountToken: false
     image:
-      repository: tmaxcloudck/notary-server-photon
-      tag: 2.7.4
+      repository: goharbor/notary-server-photon
+      tag: v2.8.0
     replicas: 1
     resources:
       requests:
@@ -735,8 +735,8 @@ notary:
     # mount the service account token
     automountServiceAccountToken: false
     image:
-      repository: tmaxcloudck/notary-signer-photon
-      tag: 2.7.4
+      repository: goharbor/notary-signer-photon
+      tag: v2.8.0
     replicas: 1
     resources:
       requests:
@@ -770,13 +770,13 @@ database:
     # mount the service account token
     automountServiceAccountToken: false
     image:
-      repository: tmaxcloudck/harbor-db
-      tag: 2.7.4
+      repository: goharbor/harbor-db
+      tag: v2.8.0
     # The initial superuser password for internal database
     password: "changeit"
     # The size limit for Shared memory, pgSQL use it for shared_buffer
     # More details see:
-    # https://github.com/tmaxcloudck/harbor/issues/15034
+    # https://github.com/goharbor/harbor/issues/15034
     shmSizeLimit: 512Mi
     # The timeout used in livenessProbe; 1 to 5 seconds
     livenessProbe:
@@ -841,8 +841,8 @@ redis:
     # mount the service account token
     automountServiceAccountToken: false
     image:
-      repository: tmaxcloudck/redis-photon
-      tag: 2.7.4
+      repository: goharbor/redis-photon
+      tag: v2.8.0
     resources:
       requests:
         cpu: 500m
@@ -900,8 +900,8 @@ exporter:
   # mount the service account token
   automountServiceAccountToken: false
   image:
-    repository: tmaxcloudck/harbor-exporter
-    tag: 2.7.4
+    repository: goharbor/harbor-exporter
+    tag: v2.8.0
   nodeSelector: {}
   tolerations: []
   affinity: {}
