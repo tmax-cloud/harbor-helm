@@ -15,13 +15,17 @@
 1. (외부망 환경에서) HyperRegistry 이미지 및 바이너리 다운로드
 
    1. git repo 클론
-      * v.2.4.0 이하
+      * v2.4.0 이하
       ```bash
       git clone -b 5.0 https://github.com/tmax-cloud/HyperRegistry-Chart
       ```
-      * v.2.4.1 이상
+      * v2.4.1 (5.0 브랜치)
       ```bash
       git clone -b 5.0 https://github.com/tmax-cloud/harbor-helm
+      ```
+      * v2.7.0 (5.2 브랜치)
+      ```bash
+      git clone -b 5.2 https://github.com/tmax-cloud/harbor-helm
       ```
    2. HyperRegistry 이미지 다운로드
       ```bash
