@@ -449,7 +449,7 @@ nginx:
 portal:
   image:
     repository: tmaxcloudck/harbor-portal
-    tag: 2.7.4
+    tag: 2.7.4.fix
   # set the service account to be used, default if left empty
   serviceAccountName: ""
   # mount the service account token
