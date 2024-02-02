@@ -196,7 +196,6 @@ spec:
   - metadata:
       name: data
       labels:
-{{ include "harbor.stsLabels" . | indent 8 }}
 {{ include "harbor.labels" . | indent 8 }}
       annotations:
       {{- range $key, $value := $trivy.annotations }}
