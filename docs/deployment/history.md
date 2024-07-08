@@ -1,12 +1,21 @@
-# Hyperregistry 버전 비고
+# Hyperregistry 히스토리
+
+### v2.8.6
+* 오픈소스 변경없이 그대로 사용하기로 결정 
+    - harbor-helm 1.12.0 사용 
+
+### v2.7.4 & 2.7.4.fix
+* hypercloud 5.3 릴리즈 셋 포함 
+
+### v2.7.0
+* hypercloud 5.2 릴리즈 셋 포함 
+
+### v2.4.1 
 * Hyperregistry의 오픈소스인 "Harbor"는 이미지와 헬름차트의 버전차이가 존재
     - Harbor 2.4.x | Harbor-Helm 1.8.x
 * Hyperregistry는 "Harbor와 다르게" helm chart 버전을 동일하게 설정.
     - Hyperregistry 2.4.x | Hyperregistry-Helm 2.4.x
 
-# Hyperregistry 히스토리
-
-### v2.4.1 [현재 사용 중]
 * metrics 및 tracing 지원을 위한 harbor v2.4.1 통합
     * [superregistry 5.0 브랜치]와 [harbor release-2.4.0 브랜치] 통합
     * helm chart git repo를 git fork 기반의 tmaxcloud/harbor-helm으로 변경 및 업데이트
