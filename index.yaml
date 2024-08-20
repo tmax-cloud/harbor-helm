@@ -2,9 +2,34 @@ apiVersion: v1
 entries:
   hyperregistry:
   - apiVersion: v1
+    appVersion: 2.7.4
+    created: "2024-08-20T14:57:21.306113+09:00"
+    description: An open source trusted cloud native registry that stores, signs,
+      and scans content forked from Harbor
+    digest: a42b73ca09abc78b7a517c943ada778509b763b8d988b8844eab0b9c3603c5dd
+    home: https://goharbor.io
+    icon: https://raw.githubusercontent.com/tmax-cloud/hyperregistry/5.0/icons/logo.png
+    keywords:
+    - docker
+    - registry
+    - harbor
+    maintainers:
+    - email: namgon_kim@tmax.co.kr
+      name: namgon kim
+    - email: taejune_ahn@tmax.co.kr
+      name: taejune ahn
+    name: hyperregistry
+    sources:
+    - https://github.com/tmax-cloud/hyperregistry/tree/release-2.7.0
+    - https://github.com/tmax-cloud/harbor-helm/tree/5.2.1
+    urls:
+    - hyperregistry-2.7.4.tgz
+    version: 2.7.4
+  - apiVersion: v1
     appVersion: 2.7.0
-    created: "2023-01-25T00:57:49.870874808-05:00"
-    description: An open source trusted cloud native registry that stores, signs, and scans content forked from Harbor
+    created: "2024-08-20T14:57:21.299236+09:00"
+    description: An open source trusted cloud native registry that stores, signs,
+      and scans content forked from Harbor
     digest: 19d2fae9cbd2b0149cb6b04233bf974d4253e4bc415178f1230f1642d16cf1c1
     home: https://goharbor.io
     icon: https://raw.githubusercontent.com/tmax-cloud/hyperregistry/5.0/icons/logo.png
@@ -24,8 +49,9 @@ entries:
     version: 2.7.0
   - apiVersion: v1
     appVersion: 2.4.1
-    created: "2023-01-25T00:57:49.861379632-05:00"
-    description: An open source trusted cloud native registry that stores, signs, and scans content forked from Harbor
+    created: "2024-08-20T14:57:21.289301+09:00"
+    description: An open source trusted cloud native registry that stores, signs,
+      and scans content forked from Harbor
     digest: 65f062408db22258aa77575d50ec85cba8b1ed7824891fe2936b28c0ea63eb67
     home: https://goharbor.io
     icon: https://raw.githubusercontent.com/tmax-cloud/hyperregistry/5.0/icons/logo.png
@@ -45,4 +71,4 @@ entries:
     urls:
     - hyperregistry-2.4.1.tgz
     version: 2.4.1
-generated: "2023-01-25T00:57:49.852066679-05:00"
+generated: "2024-08-20T14:57:21.276103+09:00"
